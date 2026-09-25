@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(5)->create();
+        User::factory(3)->create();
 
         Category::create([
             'name' => 'Psychological',
@@ -27,6 +27,11 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name' => 'Suspense',
             'slug' => 'suspense'
+        ]);
+
+        Category::create([
+            'name' => 'Sci-Fi',
+            'slug' => 'sci-fi'
         ]);
 
         Post::factory(10)->create();
