@@ -23,6 +23,7 @@
             </div>
         </div>
     @else
+        <p>Belum ada post yang dibuat.</p>
     @endif
 
     <div class="container">
