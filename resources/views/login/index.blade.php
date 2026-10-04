@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-4">
             <main class="form-signin w-100 m-auto">
-                <h1 class="h3 mb-3 fw-normal text-center">Please login</h1>
+                <h1 class="h3 mb-3 fw-normal text-center">Login</h1>
                 <form>
                     <div class="form-floating">
                         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
@@ -18,6 +18,9 @@
                         Login
                     </button>
                 </form>
+                <small class="d-block text-center mt-3">
+                    <a href="/register">Create new account</a>
+                </small>
             </main>
         </div>
     </div>
