@@ -53,7 +53,7 @@
                         Register
                     </button>
                 </form>
-                <small class="d-block text-center mt-3">
+                <small class="d-block text-center mt-3"> Have account?
                     <a href="/login">Login here</a>
                 </small>
             </main>
