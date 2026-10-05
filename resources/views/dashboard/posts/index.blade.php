@@ -5,7 +5,7 @@
         <h1 class="h2">My Posts</h1>
     </div>
 
-    @if (sesssion()->has('success'))
+    @if (session()->has('success'))
         <div class="alert alert-success" role="alert">
             {{ session('success') }}
         </div>
@@ -34,14 +34,20 @@
                                     <use xlink:href="#eye"></use>
                                 </svg>
                             </a>
-                            <a href="" class="badge bg-warning"><svg class="bi" aria-hidden="true">
+                            <a href="/dashboard/posts/{{ $post->slug }}/edit" class="badge bg-warning"><svg class="bi"
+                                    aria-hidden="true">
                                     <use xlink:href="#pencil-square"></use>
                                 </svg>
                             </a>
-                            <a href="" class="badge bg-danger"><svg class="bi" aria-hidden="true">
-                                    <use xlink:href="#trash"></use>
-                                </svg>
-                            </a>
+                            <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">
+                                    <svg class="bi" aria-hidden="true">
+                                        <use xlink:href="#trash"></use>
+                                    </svg>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

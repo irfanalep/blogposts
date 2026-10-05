@@ -9,12 +9,19 @@
                     <a href="/dashboard/posts" class="btn btn-success"><svg class="bi" aria-hidden="true">
                             <use xlink:href="#arrow-left"></use>
                         </svg>All Posts</a>
-                    <a href="" class="btn btn-warning"><svg class="bi" aria-hidden="true">
+                    <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning"><svg class="bi"
+                            aria-hidden="true">
                             <use xlink:href="#pencil-square"></use>
                         </svg>Edit</a>
-                    <a href="" class="btn btn-danger"><svg class="bi" aria-hidden="true">
-                            <use xlink:href="#trash"></use>
-                        </svg>Delete</a>
+                    <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button class="btn btn-danger" onclick="return confirm('Are you sure?')">
+                            <svg class="bi" aria-hidden="true">
+                                <use xlink:href="#trash"></use>
+                            </svg>Delete
+                        </button>
+                    </form>
                 </div>
                 <img src="{{ asset('img/pprei.jpg') }}" alt="PP Rei" class="img-fluid">
                 <article>
