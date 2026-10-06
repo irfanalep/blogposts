@@ -23,7 +23,11 @@
                         </button>
                     </form>
                 </div>
-                <img src="{{ asset('img/pprei.jpg') }}" alt="PP Rei" class="img-fluid">
+                @if ($post->image)
+                    <img src="{{ asset('storage/' . $post->image) }}" alt="Photo" class="img-fluid">
+                @else
+                    <img src="{{ asset('img/pprei.jpg') }}" alt="PP Rei" class="img-fluid">
+                @endif
                 <article>
                     <p>{!! $post->body !!}</p>
                 </article>
